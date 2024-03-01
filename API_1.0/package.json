@@ -1,0 +1,11 @@
+{
+  "name": "api_1.0",
+  "version": "1.0.0",
+  "description": "first version of the projet api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrade Samuel",
+  "license": "ISC"
+}
