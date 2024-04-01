@@ -8,27 +8,31 @@ import { GetFamiliar } from "./app/useCases/familiars/GetFamiliar";
 import { GetPatients } from "./app/useCases/patients/GetPatients";
 import { GetPatient } from "./app/useCases/patients/GetPatient";
 import { GetFamiliars } from "./app/useCases/familiars/GetFamiliars";
+import { Login } from "./app/useCases/generals/Login";
+import { doctorAuthorization, loginAuthorization } from "./app/middlewares/functions";
 
 export const router = Router();
+//Login
+router.post('/login', Login);
+
 //Get familiar
-router.get("/familiar/:id", GetFamiliar);
+router.get("/familiar/:id",loginAuthorization, GetFamiliar);
 //Get familiars
-router.get('/familiar',GetFamiliars);
+router.get('/familiar',loginAuthorization ,GetFamiliars);
 //Register familiar
 router.post('/familiar', RegisterFamiliar);
 
 //Get Patient
-router.get('/patient/:id', GetPatient);
+router.get('/patient/:id',loginAuthorization, doctorAuthorization, GetPatient);
 //Get Patients
-router.get('/patient', GetPatients);
+router.get('/patient',loginAuthorization, doctorAuthorization, GetPatients);
 //Register patient
 router.post('/patient', RegisterPatient);
 
-
 //Get Doctor
-router.get('/doctor/:id', GetDoctor);
+router.get('/doctor/:id',loginAuthorization , GetDoctor);
 //Get Doctors
-router.get('/doctor', GetDoctors);
+router.get('/doctor',loginAuthorization , GetDoctors);
 //Register Doctor
 router.post('/doctor', RegisterDoctor);
 

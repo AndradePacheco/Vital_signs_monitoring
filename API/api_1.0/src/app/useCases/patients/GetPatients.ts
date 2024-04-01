@@ -7,7 +7,6 @@ export async function GetPatients(req: Request, res: Response) {
         const patients = await Patient.find();
         res.json(patients);
     } catch (error) {
-        console.log(error)
         res.json(({error: "Error getting patients list"}));
     }
 }
