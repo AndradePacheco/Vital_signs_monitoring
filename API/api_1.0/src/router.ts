@@ -10,6 +10,8 @@ import { GetPatient } from "./app/useCases/patients/GetPatient";
 import { GetFamiliars } from "./app/useCases/familiars/GetFamiliars";
 import { Login } from "./app/useCases/generals/Login";
 import { doctorAuthorization, loginAuthorization } from "./app/middlewares/functions";
+import { SetVitalSigns } from "./app/useCases/patients/SetVitalSigns";
+import { GetVitalSigns } from "./app/useCases/patients/GetVitalSigns";
 
 export const router = Router();
 //Login
@@ -28,6 +30,10 @@ router.get('/patient/:id',loginAuthorization, doctorAuthorization, GetPatient);
 router.get('/patient',loginAuthorization, doctorAuthorization, GetPatients);
 //Register patient
 router.post('/patient', RegisterPatient);
+//Set Vital Signs
+router.put('/patient/vitalsigns/:id', loginAuthorization, SetVitalSigns)
+//Get Vital Signs
+router.get('/patient/vitalsigns/:id', loginAuthorization, GetVitalSigns)
 
 //Get Doctor
 router.get('/doctor/:id',loginAuthorization , GetDoctor);

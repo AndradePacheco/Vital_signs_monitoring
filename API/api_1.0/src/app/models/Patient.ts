@@ -46,18 +46,10 @@ const patientSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Familiar'
     },
-
-    'vital_signs': [{
-        'heart_rate': Number,
-        'oxygenation': Number,
-        'temperature': Number,
-        'registered_at': {
-            type: Date,
-            default: Date.now
-        }
-
-    }],
-
+    'vital_signs':{
+        type: Schema.Types.ObjectId,
+        ref: 'VitalSigns'
+    }
 });
 
 //Encriptação da "password" antes da criação de qualquer "familiar"

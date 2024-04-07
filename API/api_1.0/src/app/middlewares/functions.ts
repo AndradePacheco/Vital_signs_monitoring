@@ -54,7 +54,7 @@ export async function loginAuthorization(req: any, res: any, next: NextFunction)
             })
             else {
                 if (typeof decode === 'object' && 'email' in decode) {
-                    req.privilege = decode.privilige;
+                    req.privilege = decode.privilege;
                     req.email = decode.email;
                     switch (decode.privilege) {
                         case "Patient":
