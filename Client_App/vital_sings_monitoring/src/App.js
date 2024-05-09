@@ -1,10 +1,10 @@
 import './App.css';
-import HomeScreen from './screens/homeScreen';
+import Rotas from './routes';
 
 function App() {
   return (
     <>
-      <HomeScreen />
+      <Rotas/>
     </>
   );
 }

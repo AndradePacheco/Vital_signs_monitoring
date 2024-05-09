@@ -1,4 +1,5 @@
 import Header from '../components/header';
+import { Link } from 'react-router-dom';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Image from 'react-bootstrap/Image';
 import '../styles/homeScreen.css';
@@ -19,11 +20,11 @@ function HomeScreen() {
                     <div className='buttons'>
                         <button className='button sign-in'>
                             <span><Image className='icon' src={login} /></span>
-                            <span className='icon-text'>Sign In</span>
+                            <Link to="/login"><span className='icon-text'>Sign In</span></Link>
                         </button>
                         <button className='button sign-up'>
                             <span><Image className='icon' src={register} /></span>
-                            <span className='icon-text'>Sign Up</span>
+                            <Link to="register"><span className='icon-text'>Sign Up</span></Link>
                         </button>
                     </div>
                 </div>

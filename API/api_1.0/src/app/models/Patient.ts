@@ -16,7 +16,7 @@ const patientSchema = new Schema({
     },
     'diseases': [String],
 
-    'adress': {
+    'address': {
         type: String,
         required: true,
     },

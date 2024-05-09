@@ -8,6 +8,7 @@ import '../../styles/header.css';
 import logo from '../../assets/logo.png';
 import login from '../../assets/images/login.png';
 import register from '../../assets/images/register.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -25,16 +26,20 @@ function Header() {
                             <Nav.Link href="#link"><span className='spanLink'>About us</span></Nav.Link>
                             <NavDropdown title="Join us" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">
-                                    <span className='header-login'>
-                                        <Image className='header-icon' src={login}/>    
-                                    </span>
-                                    <span>Log in</span>
+                                    <Link to="/login">
+                                        <span className='header-login'>
+                                            <Image className='header-icon' src={login}/>
+                                        </span>
+                                        <span>Log in</span>
+                                    </Link>
                                     </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
-                                <span className='header-register'>
-                                    <Image className='header-icon' src={register} />
-                                </span>
-                                <span>Register</span>
+                                <Link to="/register">
+                                    <span className='header-register'>
+                                            <Image className='header-icon' src={register} />
+                                    </span>
+                                    <span>Register</span>
+                                </Link>
                                 </NavDropdown.Item>
                                 {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                 <NavDropdown.Divider />
