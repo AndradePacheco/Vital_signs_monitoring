@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Register() {
     return (
         <div className="mainContainer">
-            <Form>
+            <Form className="loginForm">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
@@ -17,8 +17,15 @@ function Register() {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicDoctors">
+                    <Form.Label>Account</Form.Label>
+                    <Form.Select aria-label="Select your Doctor">
+                        <option disabled selected>Select your privilege</option>
+                        <option value="#">Doctor</option>
+                        <option value="#">Patient</option>
+                    </Form.Select>
+                </Form.Group>
                 <Button type="submit">LogIn</Button>
-
             </Form>
             <h1 className="loginTitle">Welcome Back</h1>
             <Link to="/"><Image className="closeIcon" src={closeIcon}/></Link>

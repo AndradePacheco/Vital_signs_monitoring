@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Register() {
     return (
         <div className="mainContainer">
-            <Form>
+            <Form className="registerForm">
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridFirstName">
                         <Form.Label>First Name</Form.Label>
@@ -40,9 +40,9 @@ function Register() {
                     <Form.Control type="text" placeholder="Enter your Address"/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicFamily">
-                    <Form.Label>Have a family member?</Form.Label>
+                    {/*<Form.Label>Have a family member?</Form.Label>
                     <Form.Check label="Yes" name="familyMember" type="radio" id="familyMember"/>
-                    <Form.Check inline label="No" name="familyMember" type="radio" id="familyMember"/>
+    <Form.Check inline label="No" name="familyMember" type="radio" id="familyMember"/>*/}
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDoctors">
                     <Form.Label>Doctor</Form.Label>

@@ -29,7 +29,7 @@ export async function Login(req: Request, res: Response) {
                 throw new Error("Privilege undefined, please select your privilege");
                 break;
         }
-        if(!user) res.status(401).json({error: "Incorret email or Privilege dont match the account, please select your account's privilege!"});
+        if(!user) res.status(401).json({error: "Incorret email or Privilege dont match the account, please select your account's privilege!"})  ;
         else{
             const encrypted = user.password;
             isCorrectPassword(password, encrypted, function(err, same){
