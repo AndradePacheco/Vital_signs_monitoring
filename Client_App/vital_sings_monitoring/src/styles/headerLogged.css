@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url(../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+div.headerLoggedPrincipal{
+    background: linear-gradient(to left, #8d9daa, #0075A2);
+}
+div.offcanvas-body{
+    font-family: 'OpenSans';
+    background-color: #0297d2;
+    color: white;
+}
+div.offcanvas-header{
+    font-family: 'OpenSans';
+    background-color: #0075A2;
+    color: white;
+}
+

@@ -1,6 +1,7 @@
 div#root{
     height: inherit;
     background-image: linear-gradient(to right, #04c4d93d, #04acbf33, #89d1d915);
+    gap: 0;
 
 }
 .mainContainer{
@@ -9,6 +10,23 @@ div#root{
     margin: auto;
     position: relative;
     display: flex;
+}
+.toogleSection{
+    background-color: transparent;
+    height: 20px;
+    position: relative;
+    top: 5%;
+}
+.toogleButton{
+    background: transparent;
+    backdrop-filter: blur(10px);
+    margin: 0 5px;
+    box-shadow: 2px 2px 5px rgba(99, 169, 206, 0.527);
+    border: none;
+    transition: all .3s;
+}
+.toogleButton:hover{
+    transform: scale(1.1);
 }
 .registerText{
     position: absolute;

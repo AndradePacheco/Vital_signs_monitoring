@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 function Register() {
     return (
         <div className="mainContainer">
+            <span className="toogleSection">
+                <button className="toogleButton doctorButton">Doctor</button>
+                <button className="toogleButton patientButton">Patient</button>
+            </span>
             <Form className="registerForm">
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridFirstName">
