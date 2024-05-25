@@ -13,9 +13,9 @@ div#root{
 .loginTitle{
     position: absolute;
     left: 6%;
-    top: 10%;
+    top: 15%;
     z-index: 999;
-    color: #689fa5;
+    color: #ffffffb6;
     font-style: italic;
     font-size: 4em;
 }

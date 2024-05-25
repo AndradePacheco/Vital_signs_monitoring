@@ -1,6 +1,6 @@
 import Register from "../../components/forms/registerForm/doctor";
 
-function RegisterScreen(){
+function DoctorRegister(){
     return(
         <>
             <Register/>
@@ -8,4 +8,4 @@ function RegisterScreen(){
     )
 }
 
-export default RegisterScreen;
+export default DoctorRegister;

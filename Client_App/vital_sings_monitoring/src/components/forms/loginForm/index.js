@@ -21,8 +21,8 @@ function Register() {
                     <Form.Label>Account</Form.Label>
                     <Form.Select aria-label="Select your Doctor">
                         <option disabled selected>Select your privilege</option>
-                        <option value="#">Doctor</option>
-                        <option value="#">Patient</option>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Patient">Patient</option>
                     </Form.Select>
                 </Form.Group>
                 <Button type="submit">LogIn</Button>

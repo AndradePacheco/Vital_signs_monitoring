@@ -34,7 +34,7 @@ function Header() {
                                     </Link>
                                     </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">
-                                <Link to="/register">
+                                <Link to="/doctorRegister">
                                     <span className='header-register'>
                                             <Image className='header-icon' src={register} />
                                     </span>

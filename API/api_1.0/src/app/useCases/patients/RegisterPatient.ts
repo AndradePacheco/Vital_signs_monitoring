@@ -3,8 +3,8 @@ import { Patient } from "../../models/Patient";
 import { VitalSigns } from "../../models/VitalSings";
 
 export async function RegisterPatient(req:Request, res:Response){
-    const {name, birthday, diseases, adress, phone_number, email, password, doctor} = req.body;
-    const patient = new Patient({name, birthday, diseases, adress, phone_number, email, password, doctor});
+    const {name, birthday, address, phone_number, email, password, doctor} = req.body;
+    const patient = new Patient({name, birthday, address, phone_number, email, password, doctor});
 
     try {
         await patient.save();
@@ -12,6 +12,6 @@ export async function RegisterPatient(req:Request, res:Response){
         await vital_signs.save();
         res.status(200).json({'patient':patient,'vitalsigns': vital_signs});
     } catch (error) {
-        res.status(500).json(({error: "Error on registering familiar"}));
+        res.status(500).json(({error: "Error on registering patient"}));
     }
 };

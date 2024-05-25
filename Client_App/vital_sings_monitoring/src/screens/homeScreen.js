@@ -24,7 +24,7 @@ function HomeScreen() {
                         </button>
                         <button className='button sign-up'>
                             <span><Image className='icon' src={register} /></span>
-                            <Link to="register"><span className='icon-text'>Sign Up</span></Link>
+                            <Link to="doctorRegister"><span className='icon-text'>Sign Up</span></Link>
                         </button>
                     </div>
                 </div>
