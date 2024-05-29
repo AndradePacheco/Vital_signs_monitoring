@@ -1,13 +1,20 @@
 import Header from '../components/header';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Image from 'react-bootstrap/Image';
 import '../styles/homeScreen.css';
 import login from '../assets/images/login.png';
 import register from '../assets/images/register.png';
+import { useEffect, useState } from 'react';
 
 
 function HomeScreen() {
+    const [navigateToVitals, setNavigateToVitals] = useState(false);
+
+    useEffect(() => {
+        if(localStorage.getItem('token')) setNavigateToVitals(true);
+    }, [])
+    if(navigateToVitals) return <Navigate replace to={{pathname: '/vitals'}}/>
     return (
         <>
             <Header />

@@ -15,4 +15,20 @@ div.offcanvas-header{
     background-color: #0075A2;
     color: white;
 }
+.sideNav{
+    position: relative;
+}
+.logout{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+}
+.logoutImage{
+    width: 40px;
+    height: 40px;
+}
+.logoutButton{
+    background: transparent;
+    border: none;
+}
 

@@ -7,7 +7,7 @@ function Vitals(){
     return(
         <>
             <div className="vitalsPrincipal">
-                <div class="vitalsContainer">
+                <div className="vitalsContainer">
                     <div className="vitalContainer">
                         <span className="vital">
                             <Image className='vitalImage' src={heart}/>

@@ -82,7 +82,7 @@ function Register() {
                 <Form.Group className="mb-3" controlId="formBasicDoctors">
                     <Form.Label>Doctor</Form.Label>
                     <Form.Select aria-label="Select your Doctor" onChange={e => setDoctor(e.target.value)}>
-                        <option disabled selected>Choose your Doctor</option>
+                        <option disabled defaultChecked>Choose your Doctor</option>
                         <option value="6608368693c9dd3673fe6341">Andrade</option>
                         <option value="6608368693c9dd3673fe6342">Pacheco</option>
                         <option value="6608368693c9dd3673fe6343">Calado</option>
