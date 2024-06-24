@@ -7,7 +7,6 @@ import login from '../assets/images/login.png';
 import register from '../assets/images/register.png';
 import { useEffect, useState } from 'react';
 
-
 function HomeScreen() {
     const [navigateToVitals, setNavigateToVitals] = useState(false);
 

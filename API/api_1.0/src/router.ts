@@ -31,7 +31,7 @@ router.get('/patient',loginAuthorization, doctorAuthorization, GetPatients);
 //Register patient
 router.post('/patient', RegisterPatient);
 //Set Vital Signs
-router.put('/patient/vitalsigns/:id', loginAuthorization, SetVitalSigns)
+router.put('/patient/vitalsigns/:id', SetVitalSigns)
 //Get Vital Signs
 router.get('/patient/vitalsigns/:id', loginAuthorization, GetVitalSigns)
 

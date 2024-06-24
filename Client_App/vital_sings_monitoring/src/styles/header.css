@@ -20,8 +20,9 @@ img{
     margin: 0 10px;
 }
 span{
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
+    color: #333F70;
 }
 .me-auto{
     margin: 0 auto;

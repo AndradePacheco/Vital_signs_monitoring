@@ -2,26 +2,55 @@
     font-family: 'OpenSans';
     src: url(../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
 }
+@font-face {
+    font-family: 'Unbounded';
+    src: url(../assets/fonts/Unbounded/Unbounded-VariableFont_wght.ttf);
+}
 div.headerLoggedPrincipal{
-    background: linear-gradient(to left, #8d9daa, #0075A2);
+    background: #2cbb9a;
+    font-size: 50px;
+}
+span.headerLoggedTitle{
+    color: black;
+}
+div.container-fluid{
+    font-family: 'Unbounded';
 }
 div.offcanvas-body{
     font-family: 'OpenSans';
-    background-color: #0297d2;
+    background-color: #2cbb9a;
     color: white;
 }
 div.offcanvas-header{
     font-family: 'OpenSans';
-    background-color: #0075A2;
+    background-color: #279f83;
     color: white;
 }
 .sideNav{
     position: relative;
 }
+a.nav-link{
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    transition: all .5s;
+}
+a.nav-link:hover{
+    background-color: #279f83;
+    transition: all .5s;
+}
 .logout{
     position: absolute;
     bottom: 15px;
     left: 0;
+    border-radius: 30%;
+    padding: 10px 0px;
+    transition: all .5s;
+}
+.logout:hover{
+    background-color: #279f83;
+    transition: all .5s;
 }
 .logoutImage{
     width: 40px;

@@ -9,10 +9,13 @@ import '../../styles/headerLogged.css';
 import PatientsService from '../../services/patient';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import socket from '../socket/socket';
 
 function HeaderLogged() {
   const [navigateToHome, setNavigateToHome] = useState(false);
-
+  socket.on('dados', (message) => {
+    console.log(message);
+  })
   const logOut = async () => {
     await PatientsService.logout();
     setNavigateToHome(true);
@@ -27,7 +30,7 @@ function HeaderLogged() {
           <Container fluid>
             <Navbar.Brand href="#home">
               <Image src={logo} />
-              <span>Monitor your health with us</span>
+              <span className='headerLoggedTitle'>Monitor your health with us</span>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
             <Navbar.Offcanvas
@@ -43,7 +46,11 @@ function HeaderLogged() {
               <Offcanvas.Body className='sideNav'>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
+                  <Nav.Link href="#action2">Pacientes</Nav.Link>
+                  <Nav.Link href="#action2">Gerir Pacientes</Nav.Link>
+                  <Nav.Link href="#action2">Gerir Doutores</Nav.Link>
+                  <Nav.Link href="#action2">Notificações</Nav.Link>
+                  <Nav.Link href="#action2">Sobre o sistema</Nav.Link>
                 </Nav>
                 <div className='logout'><button className='logoutButton' type='button' onClick={logOut}>
                   <Image className='logoutImage' src={logout}/>

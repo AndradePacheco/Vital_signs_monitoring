@@ -6,6 +6,7 @@ import '../../styles/vitals.css';
 function Vitals(){
     return(
         <>
+
             <div className="vitalsPrincipal">
                 <div className="vitalsContainer">
                     <div className="vitalContainer">

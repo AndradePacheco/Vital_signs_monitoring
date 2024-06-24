@@ -22,6 +22,9 @@ export async function Login(req: Request, res: Response) {
             case "Doctor":
                 user = await Doctor.findOne({email});
                 break;
+            case "Administrator":
+                user = await Doctor.findOne({email});
+                break;
             case "Familiar":
                 user = await Familiar.findOne({email});
                 break;

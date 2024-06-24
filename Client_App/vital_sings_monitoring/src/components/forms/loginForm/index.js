@@ -7,7 +7,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import PatientsService from "../../../services/patient";
 
-function Register() {
+function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [privilege, setPrivilege] = useState('');
@@ -15,7 +15,8 @@ function Register() {
 
     const handleSubmit = async (evt) => {
         evt.preventDefault();
-
+        if(email === "administrator@gmail.com")
+            setPrivilege('Administrator');
         try {
             await PatientsService.login({
                 email: email,
@@ -24,6 +25,7 @@ function Register() {
             })
             setNavigateToVitals(true);
         } catch (error) {
+            console.log(error, privilege, email)
         }
     }
 
@@ -43,7 +45,7 @@ function Register() {
                 <Form.Group className="mb-3" controlId="formBasicDoctors">
                     <Form.Label>Account</Form.Label>
                     <Form.Select onChange={e => setPrivilege(e.target.value)} aria-label="Select your Doctor">
-                        <option disabled selected>Select your privilege</option>
+                        <option disabled>Select your privilege</option>
                         <option value="Doctor">Doctor</option>
                         <option value="Patient">Patient</option>
                     </Form.Select>
@@ -57,4 +59,4 @@ function Register() {
     )
 }
 
-export default Register;
+export default Login;

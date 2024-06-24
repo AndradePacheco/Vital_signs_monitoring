@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { Patient } from "../../models/Patient";
 import { VitalSigns } from "../../models/VitalSings";
+import io from "../../..";
 
 export async function SetVitalSigns(req: Request, res: Response){
     const { id } = req.params;
@@ -22,6 +23,7 @@ export async function SetVitalSigns(req: Request, res: Response){
             },
             {new: true}
         );
+        io.emit('dados', vitalsigns);
         res.json({vitalsigns, patient})
 
     } catch (error) {

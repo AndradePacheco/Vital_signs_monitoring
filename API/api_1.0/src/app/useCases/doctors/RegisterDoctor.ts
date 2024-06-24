@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Doctor } from "../../models/Doctor";
 
 export async function RegisterDoctor(req:Request, res:Response){
-    const {name, phone_number, email, password } = req.body;
+    const {name, phone_number, email, password} = req.body;
     const doctor = new Doctor({name, phone_number, email, password});
 
     try {
