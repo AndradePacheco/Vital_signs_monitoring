@@ -23,7 +23,7 @@ export function doctorAuthorization(req: any, res: any, next: NextFunction) {
             })
             else {
                 if (typeof decode === 'object' && 'email' in decode) {
-                    if (decode.privilege !== "Doctor") return res.status(401).json({
+                    if (decode.privilege !== "Doctor" && decode.privilege !== 'Administrator') return res.status(401).json({
                         error: "Unauthorized: acess denied"
                     })
                     req.email = decode.email;
@@ -66,6 +66,14 @@ export async function loginAuthorization(req: any, res: any, next: NextFunction)
                                 .catch(err => { res.status(401).json({ error: err }) });
                             break;
                         case "Doctor":
+                            Doctor.findOne({ email: decode.email })
+                                .then(user => {
+                                    req.user = user;
+                                    next();
+                                })
+                                .catch(err => { res.status(401).json({ error: err }) });
+                            break;
+                        case "Administrator":
                             Doctor.findOne({ email: decode.email })
                                 .then(user => {
                                     req.user = user;

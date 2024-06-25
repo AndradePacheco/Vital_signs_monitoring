@@ -11,7 +11,10 @@ const PatientsService = {
     logout: () => {
         localStorage.removeItem('user', null);
         localStorage.removeItem('token', null);
-    }
+    },
+    getPatients: () => API.get('/patient', {
+            headers: {'acess-token': localStorage.getItem('token')}
+        })
 }
 
 export default PatientsService;

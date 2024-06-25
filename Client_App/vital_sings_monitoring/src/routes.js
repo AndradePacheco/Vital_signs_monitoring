@@ -17,7 +17,7 @@ const Rotas = () => {
                 <Route exact path='/patientRegister' Component={PatientRegister}/>
                 <Route exact path='/doctorRegister' Component={DoctorRegister}/>
                 <Route exact path='/vitals' Component={privateRoute}>
-                    <Route exact path='/vitals' Component={VitalSignsScreen}/>
+                    <Route exact path='/vitals/:userId' Component={VitalSignsScreen}/>
                 </Route>
                 <Route exact path='/patients' Component={privateRoute}>
                     <Route exact path='/patients' Component={PatientsScreen}/>

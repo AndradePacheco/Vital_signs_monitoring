@@ -23,7 +23,7 @@ export async function SetVitalSigns(req: Request, res: Response){
             },
             {new: true}
         );
-        io.emit('dados', vitalsigns);
+        io.sockets.in(id).emit('dados', {'heart-rate': heart_rate, 'oxygenation': oxygenation, 'temperature': temperature});
         res.json({vitalsigns, patient})
 
     } catch (error) {

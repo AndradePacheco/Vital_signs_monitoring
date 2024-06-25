@@ -9,13 +9,15 @@ import '../../styles/headerLogged.css';
 import PatientsService from '../../services/patient';
 import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import socket from '../socket/socket';
+//import socket from '../socket/socket';
 
 function HeaderLogged() {
   const [navigateToHome, setNavigateToHome] = useState(false);
-  socket.on('dados', (message) => {
-    console.log(message);
-  })
+  //const [vitais, setVitais] = useState([]);
+
+  //socket.on('dados', (message) => {
+  //  console.log(message);
+ // })
   const logOut = async () => {
     await PatientsService.logout();
     setNavigateToHome(true);

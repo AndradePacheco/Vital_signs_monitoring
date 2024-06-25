@@ -3,8 +3,29 @@ import temperature from '../../assets/images/temperature2.png';
 import oxygenation from '../../assets/images/oxygenation.png';
 import { Image } from 'react-bootstrap';
 import '../../styles/vitals.css';
+import socket from '../socket/socket';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 function Vitals(){
+
+    const [vitals, setVitals] = useState({});
+    const {userId} = useParams();
+    
+    function fetchVitals(){
+        socket.emit('join', userId);
+        socket.on('dados', (vitalSigns) => {
+            setVitals(vitalSigns)
+        });
+        console.log(vitals);
+    }
+
+    useEffect(() => {
+        fetchVitals();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [vitals]);
+
     return(
+
         <>
 
             <div className="vitalsPrincipal">
@@ -15,7 +36,7 @@ function Vitals(){
                             <span className="vitalText">Heart Rate</span>
                         </span>
                         <span className="measure">
-                            92
+                            {vitals['heart-rate']}
                         </span>
                         <span className="state">
                             Normal
@@ -27,7 +48,7 @@ function Vitals(){
                             <span className="vitalText">Oxygenation</span>
                         </span>
                         <span className="measure">
-                            95%
+                            {vitals.oxygenation}%
                         </span>
                         <span className="state">
                             Normal
@@ -39,7 +60,7 @@ function Vitals(){
                             <span className="vitalText">Temperature</span>
                         </span>
                         <span className="measure">
-                            32º
+                            {vitals.temperature}º
                         </span>
                         <span className="state">Normal</span>
                     </div>

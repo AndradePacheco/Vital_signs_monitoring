@@ -33,7 +33,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/api')
 
    io.on('connection', (socket) => {
     console.log("Novo usuário conectado" + socket.id)
-    socket.emit('message', "Hello World")
+    socket.on('join', (data) => {
+      socket.join(data);
+    })
     socket.on('disconnect', () => {
       console.log("Usuário disconectado");
     });

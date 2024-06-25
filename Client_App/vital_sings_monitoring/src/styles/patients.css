@@ -105,7 +105,7 @@ table.patientsTable{
     background-color: #26A688;
     color: #fff;
 }
-tbody > tr{
+.patientsTable tbody > tr{
     background-color: #D6F5EE;
   }
 .patientsTable td{
@@ -114,6 +114,15 @@ tbody > tr{
     font-weight: bold;
     color: #333F70;
 }
-tr > td {
+.patientsTable tr > td {
     letter-spacing: 1.5px;
+    transition: all .5s;
+}
+
+.tableName{
+    transition: all .5s;
+}
+.tableName:hover{
+    background-color: #fff;
+    transition: all .5s;
 }
