@@ -13,20 +13,23 @@ function HomeScreen() {
     useEffect(() => {
         if(localStorage.getItem('token')) setNavigateToVitals(true);
     }, [])
-    if(navigateToVitals) return <Navigate replace to={{pathname: '/vitals'}}/>
+    if(navigateToVitals){
+        if(localStorage.getItem('privilege') === 'Patient') return <Navigate replace to={{pathname: `${JSON.parse(localStorage.getItem('user'))._id}`}}/>
+        return <Navigate replace to={{pathname: '/patients'}}/>
+    } 
     return (
         <>
             <Header />
             <div className='home-container'>
                 <div className='home-inside-container description'>
-                    <h1 className='home-title'>Take care of your health</h1>
+                    <h1 className='home-title'>Monitore os Sinais Vitais</h1>
                     <span className='home-text'>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    Bem-vindo ao Sistema de Monitoramento de Sinais Vitais! Nossa plataforma conecta médicos e pacientes em tempo real, permitindo que os profissionais de saúde acessem os dados vitais dos pacientes de forma segura e eficiente. Com nosso sistema, o profissional de saúde garante um cuidado personalizado e ágil. Conecte-se agora e comece a acompanhar os sinais vitais com facilidade.
                     </span>
                     <div className='buttons'>
                         <button className='button sign-in'>
                             <span><Image className='icon' src={login} /></span>
-                            <Link to="/login"><span className='icon-text'>Sign In</span></Link>
+                            <Link to="/login"><span className='icon-text'>Entrar</span></Link>
                         </button>
                         <button className='button sign-up'>
                             <span><Image className='icon' src={register} /></span>

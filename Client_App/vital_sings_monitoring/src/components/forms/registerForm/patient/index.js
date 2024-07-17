@@ -40,39 +40,39 @@ function Register() {
     return (
         <div className="mainContainer">
             <span className="toogleSection">
-                <button className="toogleButton doctorButton"><Link replace to={'/doctorRegister'}>Doctor</Link> </button>
-                <button className="toogleButton patientButton">Patient</button>
+                <button className="toogleButton doctorButton"><Link replace to={'/doctorRegister'}>Médico</Link> </button>
+                <button className="toogleButton patientButton">Paciente</button>
             </span>
             <Form className="registerForm" onSubmit={handleSubmit}>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridFirstName">
-                        <Form.Label>First Name</Form.Label>
-                        <Form.Control type="text" required value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="First Name" />
+                        <Form.Label>Primeiro Nome</Form.Label>
+                        <Form.Control type="text" required value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="Primeiro nome..." />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridLastName">
-                        <Form.Label>Last Name</Form.Label>
-                        <Form.Control type="text" required value={secondName} onChange={e => setSecondName(e.target.value)} placeholder="Last Name" />
+                        <Form.Label>Último Nome</Form.Label>
+                        <Form.Control type="text" required value={secondName} onChange={e => setSecondName(e.target.value)} placeholder="Último nome..." />
                     </Form.Group>
                 </Row>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email" />
+                    <Form.Label>Endereço de Email</Form.Label>
+                    <Form.Control type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite o endereço de email..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+                    <Form.Label>Palavra-Passe</Form.Label>
+                    <Form.Control type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite a palavra-passe..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDate">
-                    <Form.Label>Birthday</Form.Label>
+                    <Form.Label>Data de nascimento</Form.Label>
                     <Form.Control required value={birthday} onChange={e => setBirthday(e.target.value)} type="date" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-                    <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="tel" required value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeholder="Enter phone number" />
+                    <Form.Label>Número de telefone</Form.Label>
+                    <Form.Control type="tel" required value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeholder="Digite o número de telefone..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicAddress">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control type="text" required value={address} onChange={e => setAddress(e.target.value)} placeholder="Enter your Address" />
+                    <Form.Label>Endereço</Form.Label>
+                    <Form.Control type="text" required value={address} onChange={e => setAddress(e.target.value)} placeholder="Digite o endereço do paciente..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicFamily">
                     {/*<Form.Label>Have a family member?</Form.Label>
@@ -80,9 +80,9 @@ function Register() {
     <Form.Check inline label="No" name="familyMember" type="radio" id="familyMember"/>*/}
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDoctors">
-                    <Form.Label>Doctor</Form.Label>
+                    <Form.Label>Doutor</Form.Label>
                     <Form.Select aria-label="Select your Doctor" onChange={e => setDoctor(e.target.value)}>
-                        <option disabled defaultChecked>Choose your Doctor</option>
+                        <option disabled defaultChecked>Selecione o médico que faz o registro</option>
                         <option value="6608368693c9dd3673fe6341">Andrade</option>
                         <option value="6608368693c9dd3673fe6342">Pacheco</option>
                         <option value="6608368693c9dd3673fe6343">Calado</option>
@@ -90,7 +90,7 @@ function Register() {
                     </Form.Select>
                 </Form.Group>
 
-                <Button type="submit">Submit Form</Button>
+                <Button type="submit">Registar paciente</Button>
 
             </Form>
             <h1 className="registerTitle">Welcome</h1>

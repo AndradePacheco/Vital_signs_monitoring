@@ -12,6 +12,8 @@ import { Login } from "./app/useCases/generals/Login";
 import { doctorAuthorization, loginAuthorization } from "./app/middlewares/functions";
 import { SetVitalSigns } from "./app/useCases/patients/SetVitalSigns";
 import { GetVitalSigns } from "./app/useCases/patients/GetVitalSigns";
+import { DeletePatient } from "./app/useCases/patients/deletePatient";
+import { UpdatePatient } from "./app/useCases/patients/UpdatePatient";
 
 export const router = Router();
 //Login
@@ -30,6 +32,10 @@ router.get('/patient/:id',loginAuthorization, doctorAuthorization, GetPatient);
 router.get('/patient',loginAuthorization, doctorAuthorization, GetPatients);
 //Register patient
 router.post('/patient', RegisterPatient);
+//Apagar um paciente
+router.delete('/patient/:id',loginAuthorization, doctorAuthorization, DeletePatient);
+//Atualizar um paciente
+router.put('/patient/:id', loginAuthorization, doctorAuthorization, UpdatePatient);
 //Set Vital Signs
 router.put('/patient/vitalsigns/:id', SetVitalSigns)
 //Get Vital Signs

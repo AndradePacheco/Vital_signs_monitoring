@@ -8,7 +8,7 @@ import logout from '../../assets/images/logout.png';
 import '../../styles/headerLogged.css';
 import PatientsService from '../../services/patient';
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 //import socket from '../socket/socket';
 
 function HeaderLogged() {
@@ -32,7 +32,7 @@ function HeaderLogged() {
           <Container fluid>
             <Navbar.Brand href="#home">
               <Image src={logo} />
-              <span className='headerLoggedTitle'>Monitor your health with us</span>
+              <span className='headerLoggedTitle'>Health Monitor</span>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
             <Navbar.Offcanvas
@@ -47,12 +47,12 @@ function HeaderLogged() {
               </Offcanvas.Header>
               <Offcanvas.Body className='sideNav'>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Pacientes</Nav.Link>
-                  <Nav.Link href="#action2">Gerir Pacientes</Nav.Link>
-                  <Nav.Link href="#action2">Gerir Doutores</Nav.Link>
-                  <Nav.Link href="#action2">Notificações</Nav.Link>
-                  <Nav.Link href="#action2">Sobre o sistema</Nav.Link>
+                  <Link role='button' className='nav-link' tabIndex={0}>Home</Link>
+                  <Link role='button' className='nav-link' tabIndex={0} to="/patients">Pacientes</Link>
+                  <Link role='button' className='nav-link' tabIndex={0} to="/patients/manage">Gerir Pacientes</Link>
+                  <Nav.Link href="">Gerir Doutores</Nav.Link>
+                  <Nav.Link href="">Notificações</Nav.Link>
+                  <Nav.Link href="">Sobre o sistema</Nav.Link>
                 </Nav>
                 <div className='logout'><button className='logoutButton' type='button' onClick={logOut}>
                   <Image className='logoutImage' src={logout}/>

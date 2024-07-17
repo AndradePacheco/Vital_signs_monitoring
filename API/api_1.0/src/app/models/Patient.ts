@@ -52,11 +52,9 @@ const patientSchema = new Schema({
     }
 });
 
-//Encriptação da "password" antes da criação de qualquer "familiar"
 
 patientSchema.pre('save', function(next){
 
-    //A password será encriptada antes da criação do familiar ou atualização da password
 
     if(this.isNew || this.isModified('password')){
         const document = this;

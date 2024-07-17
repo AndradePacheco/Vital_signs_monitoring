@@ -17,20 +17,20 @@ function Header() {
                 <Container>
                     <Navbar.Brand href="#home">
                         <Image src={logo}/>
-                        <span>Monitor your health with us</span>
+                        <span>Health Monitor</span>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="#home"><span className='spanLink'>Home</span></Nav.Link>
-                            <Nav.Link href="#link"><span className='spanLink'>About us</span></Nav.Link>
-                            <NavDropdown title="Join us" id="basic-nav-dropdown">
+                            <Nav.Link href="#link"><span className='spanLink'>Sobre</span></Nav.Link>
+                            <NavDropdown title="Junte-se" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">
                                     <Link to="/login">
                                         <span className='header-login'>
                                             <Image className='header-icon' src={login}/>
                                         </span>
-                                        <span>Log in</span>
+                                        <span>Entrar</span>
                                     </Link>
                                     </NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">

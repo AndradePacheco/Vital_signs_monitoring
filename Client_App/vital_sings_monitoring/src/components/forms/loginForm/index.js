@@ -12,6 +12,7 @@ function Login() {
     const [password, setPassword] = useState('');
     const [privilege, setPrivilege] = useState('');
     const [navigateToVitals, setNavigateToVitals] = useState(false);
+    const [user, setUser] = useState(null);
 
     const handleSubmit = async (evt) => {
         evt.preventDefault();
@@ -23,36 +24,41 @@ function Login() {
                 password: password,
                 privilege: privilege
             })
+            const response = JSON.parse(localStorage.getItem('user'));
+            setUser(response);
             setNavigateToVitals(true);
         } catch (error) {
             console.log(error, privilege, email)
         }
     }
 
-    if(navigateToVitals) return <Navigate replace to={{pathname: '/vitals'}}/>;
+    if(navigateToVitals){
+        if(privilege === "Doctor" || privilege === "Administrator") return <Navigate replace to={{pathname: '/patients'}}/>;
+        return <Navigate replace to={{pathname: `/vitals/${user._id}`}}/>;
+    } 
 
     return (
         <div className="mainContainer">
             <Form className="loginForm" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email" />
+                    <Form.Label>Endereço de Email</Form.Label>
+                    <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite o email..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+                    <Form.Label>Palavra-Passe</Form.Label>
+                    <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite a palavra-passe..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicDoctors">
-                    <Form.Label>Account</Form.Label>
+                    <Form.Label>Usuário</Form.Label>
                     <Form.Select onChange={e => setPrivilege(e.target.value)} aria-label="Select your Doctor">
-                        <option disabled>Select your privilege</option>
-                        <option value="Doctor">Doctor</option>
-                        <option value="Patient">Patient</option>
+                        <option disabled>Selecione o tipo da sua conta</option>
+                        <option value="Doctor">Médico</option>
+                        <option value="Patient">Paciente</option>
                     </Form.Select>
                 </Form.Group>
-                <Button type="submit">LogIn</Button>
+                <Button type="submit">Entrar</Button>
+                <h1 className="loginTitle">Welcome Back</h1>
             </Form>
-            <h1 className="loginTitle">Welcome Back</h1>
             <Link to="/"><Image className="closeIcon" src={closeIcon} /></Link>
             <Image className="formImage" src={image} />
         </div>

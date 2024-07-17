@@ -12,7 +12,7 @@ div.patientsPrincipal{
     height: inherit;
     display: flex;
     gap: 7px;
-    padding: 20px 20px 0 0;
+    padding: 10px 20px 0 0;
     overflow: hidden;
 }
 div.patientsAside{
@@ -27,7 +27,6 @@ div.doctorData{
     justify-content: center;
     padding-left: 20px;
     color: #333F70;
-    overflow: hidden;
 }
 span.doctorTitle{
     font-size: 1.3em;
@@ -37,8 +36,8 @@ span.doctorTitle{
     font-family: 'Unbounded';
 }
 div.patientsNotifications{
-    margin-left: 5px;
-    padding: 15px 0 0 0;
+    margin: 0 0 0 5px;
+    padding: 5px 0 20px;
     flex: 2;
     background-color: #26A688;
     border-radius: 15px 15px 0 0;
@@ -58,8 +57,6 @@ div.showUp{
     font-family: 'Unbounded';
     text-align: center;
     padding-bottom: 5px;
-    border-radius: 0 0 15px 15px;
-    border-bottom: 3px solid white;
     height: 15%;
     display: inline-block;
     width: 100%;
@@ -71,8 +68,9 @@ button.toggleButton{
     border: none;
     border-radius: 50%;
     position: absolute;
-    right: 3px;
+    top: 0;
     transition: all .5s;
+    font-size: .8em;
 }
 button.toggleButton:hover{
     background-color: #218b73;

@@ -36,7 +36,7 @@ function Vitals(){
                             <span className="vitalText">Heart Rate</span>
                         </span>
                         <span className="measure">
-                            {vitals['heart-rate']}
+                            65 {vitals['heart-rate']}BPM
                         </span>
                         <span className="state">
                             Normal
@@ -48,7 +48,7 @@ function Vitals(){
                             <span className="vitalText">Oxygenation</span>
                         </span>
                         <span className="measure">
-                            {vitals.oxygenation}%
+                            92{vitals.oxygenation}%
                         </span>
                         <span className="state">
                             Normal
@@ -60,17 +60,17 @@ function Vitals(){
                             <span className="vitalText">Temperature</span>
                         </span>
                         <span className="measure">
-                            {vitals.temperature}º
+                            30{vitals.temperature}º
                         </span>
                         <span className="state">Normal</span>
                     </div>
                 </div>
                 <div className='secondaryContainer'>
                     <div className='vitalsProfile'>
-                        <span className='vitalsProfilePrivilege'>Patient:</span>
+                        <span className='vitalsProfilePrivilege'>Paciente:</span>
                         <span className='vitalsProfileName'>Andrade Pacheco</span>
-                        <span className='vitalsProfileAge'>30 year</span>
-                        <span className='vitalsProfileSex'>Masculin</span>
+                        <span className='vitalsProfileAge'>30 anos</span>
+                        <span className='vitalsProfileSex'>Masculino</span>
                     </div>
                     <div className='vitalsHistoric'>
                         <table className='vitalsHistoricTable'>

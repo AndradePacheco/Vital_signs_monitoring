@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Lato';
+    src: url(../assets/fonts/Lato/Lato-Regular.ttf);
+}
+
+.managePatients{
+    height: 100%;
+    background-color: white;
+}
+.manageMonitoredPatients{
+    background-color: #e8f6f281;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.managePatientsTable{
+    height: 80%;
+    width: 85%;
+    text-align: center;
+    border: none;
+}
+.manageTitle{
+    width: 100%;
+}
+.manageTitle h1{
+    margin: 5px 0 0 15px;
+    padding: 0;
+    font-family: 'Lato';
+    font-weight: bold;
+    color: #333F70;
+    letter-spacing: .2em;
+}
+
+.managePatientsTable th{
+    font-size: 1.5em;
+    background-color: #26A688;
+    color: #fff;
+}
+
+.managePatientsTable td{
+    font-size: 1.2em;
+    font-family: 'Lato';
+    font-weight: bold;
+    color: #333F70;
+    background-color: #D6F5EE;
+}
+
+.managePatientsTable tr > td {
+    letter-spacing: 1.5px;
+    transition: all .5s;
+}
+
+.manageTableNameLink{
+    font-size: 1.15em;
+    font-family: 'Lato';
+    font-weight: bold;
+    color: #333F70;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    transition: all .5s;
+}
+
+.manageTableNameLink:hover{
+    background-color: #fff;
+    transition: all .5s;
+}
+
+.managePatientsImage{
+    width: 30px;
+    height: 30px;
+}
+
+td.managePatientsButton{
+    border: none;
+    background-color: transparent;
+    width: 50px;
+}
+
+button.managePatientsUpdateButton{
+    background-color: #D6F5EE;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: all .3s;
+}
+button.managePatientsUpdateButton:hover{
+    transform: scale(1.2);
+    transition: all .3s;
+
+}
+
+
+html > head + body.swal2-height-auto {
+    height: 100vh !important;
+}
+
+form.managePatientsForm{
+    width: 45%;
+    position: relative;
+    left: 50%;
+    top: 18%;
+    transform: translateX(-50%);
+    height: 70%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #2abd9b;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+div.managePatientsFormContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    display: inline-block;
+    transition: all .3s;
+}
+div.managePatientsFormContainerHidden{
+    display: none;
+    transition: all .3s;
+}
+.managePatientsFormCloseButton{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    transition: all .3s;
+}
+.managePatientsFormCloseButton:hover{
+    transform: scale(.9);
+    transition: all .3s;
+}

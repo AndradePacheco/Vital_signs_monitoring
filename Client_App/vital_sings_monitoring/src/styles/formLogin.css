@@ -12,12 +12,14 @@ div#root{
 }
 .loginTitle{
     position: absolute;
-    left: 6%;
-    top: 15%;
+    left: 0%;
+    top: 0%;
+    direction: ltr;
+    width: 101%;
     z-index: 999;
-    color: #ffffffb6;
+    color: #0000009f;
     font-style: italic;
-    font-size: 4em;
+    font-size: 3.5em;
 }
 .formImage{
     position: absolute;

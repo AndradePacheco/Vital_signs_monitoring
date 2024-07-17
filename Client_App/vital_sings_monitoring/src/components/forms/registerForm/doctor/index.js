@@ -27,39 +27,38 @@ function Register() {
     return (
         <div className="mainContainer">
             <span className="toogleSection">
-                <button className="toogleButton doctorButton"><Link replace to={'/doctorRegister'}>Doctor</Link></button>
-                <button className="toogleButton patientButton"><Link replace to={'/patientRegister'}>Patient</Link></button>
+                <button className="toogleButton doctorButton"><Link replace to={'/doctorRegister'}>Médico</Link></button>
+                <button className="toogleButton patientButton"><Link replace to={'/patientRegister'}>Paciente</Link></button>
             </span>
             <Form className="registerForm" onSubmit={handleSubmit}>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridFirstName">
-                        <Form.Label>First Name</Form.Label>
-                        <Form.Control type="text" required value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="First Name" />
+                        <Form.Label>Primeiro Nome</Form.Label>
+                        <Form.Control type="text" required value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="Primeiro nome..." />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridLastName">
-                        <Form.Label>Last Name</Form.Label>
-                        <Form.Control type="text" required value={secondName} onChange={e => setSecondName(e.target.value)} placeholder="Last Name" />
+                        <Form.Label>Último Nome</Form.Label>
+                        <Form.Control type="text" required value={secondName} onChange={e => setSecondName(e.target.value)} placeholder="Último nome..." />
                     </Form.Group>
                 </Row>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email" />
+                    <Form.Label>Endereço de Email</Form.Label>
+                    <Form.Control type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite o endereço de email..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+                    <Form.Label>Palavra-Passe</Form.Label>
+                    <Form.Control type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite a palavra-passe..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-                    <Form.Label>Phone Number</Form.Label>
-                    <Form.Control type="tel" required value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeholder="Enter phone number" />
+                    <Form.Label>Número de telefone</Form.Label>
+                    <Form.Control type="tel" required value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} placeholder="Digite o número de telefone..." />
                 </Form.Group>
 
-                <Button type="submit">Submit Form</Button>
-
+                <Button type="submit">Cadastrar médico</Button>
             </Form>
-            <h1 className="registerTitle">Welcome</h1>
             <Link to="/"><Image className="closeIcon" src={closeIcon} /></Link>
             <Image className="formImage" src={image} />
+            <h1 className="registerTitle">Welcome</h1>
         </div>
     )
 }
