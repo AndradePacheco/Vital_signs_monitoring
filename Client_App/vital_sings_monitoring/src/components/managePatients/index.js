@@ -7,6 +7,7 @@ import deleteImage from '../../assets/Trash.png';
 import closeIcon from '../../assets/close-button.png';
 import { Image, Form, Button, Col, Row } from "react-bootstrap";
 import Swal from 'sweetalert2';
+import Patient from "./patient";
 
 function ManagePatients(){
     const [patients, setPatients] = useState([]);
@@ -49,6 +50,7 @@ function ManagePatients(){
             }
           });
     }
+
 
     const handleUpdatePatient = async (evt) => {
         evt.preventDefault();
@@ -117,21 +119,13 @@ function ManagePatients(){
                             </thead>
                             <tbody>
                                 {
-                                    patients.map(patient => {
+                                    patients.map((patient, pos) => {
                                         return (
                                             <tr key={patient._id}>
                                                 <td className='manageTableName'>
-                                                    <Link className="manageTableNameLink" to={`/vitals/${patient._id}`}><span>{patient.name}</span> <span className="eyeIcon">&#128065;</span></Link>
+                                                    <Link className="manageTableNameLink" to={`/vitals/${patient._id}`}><span> [{pos + 1}] {patient.name}</span> <span className="eyeIcon">&#128065;</span></Link>
                                                 </td>
-                                                <td>
-                                                    63 <span className='patientsMeasure'>BPM</span>
-                                                </td>
-                                                <td>
-                                                    99<span className='patientsMeasure'>%</span>
-                                                </td>
-                                                <td>
-                                                    30<span className='patientsMeasure'>º</span>
-                                                </td>
+                                               <Patient patientId={patient._id}/>
                                                 <td className="managePatientsButton">
                                                     <button onClick={() => {
                                                         getPatient(patient._id);

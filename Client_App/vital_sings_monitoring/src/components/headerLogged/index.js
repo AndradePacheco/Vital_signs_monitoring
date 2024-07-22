@@ -9,15 +9,10 @@ import '../../styles/headerLogged.css';
 import PatientsService from '../../services/patient';
 import { useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
-//import socket from '../socket/socket';
 
 function HeaderLogged() {
   const [navigateToHome, setNavigateToHome] = useState(false);
-  //const [vitais, setVitais] = useState([]);
 
-  //socket.on('dados', (message) => {
-  //  console.log(message);
- // })
   const logOut = async () => {
     await PatientsService.logout();
     setNavigateToHome(true);
@@ -50,7 +45,7 @@ function HeaderLogged() {
                   <Link role='button' className='nav-link' tabIndex={0}>Home</Link>
                   <Link role='button' className='nav-link' tabIndex={0} to="/patients">Pacientes</Link>
                   <Link role='button' className='nav-link' tabIndex={0} to="/patients/manage">Gerir Pacientes</Link>
-                  <Nav.Link href="">Gerir Doutores</Nav.Link>
+                  <Link role='button' className='nav-link' tabIndex={0} to="/doctors">Gerir Doutores</Link>
                   <Nav.Link href="">Notificações</Nav.Link>
                   <Nav.Link href="">Sobre o sistema</Nav.Link>
                 </Nav>

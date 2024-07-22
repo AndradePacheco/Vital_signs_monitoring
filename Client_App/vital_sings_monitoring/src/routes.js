@@ -8,6 +8,7 @@ import VitalSignsScreen from './screens/vitalSignsScreen';
 import privateRoute from './components/forms/private_router';
 import PatientsScreen from './screens/patientsScreen';
 import ManagePatientsScreen from './screens/patientsScreen/ManagePatients';
+import DoctorsScreen from './screens/doctorsScreen';
 
 const Rotas = () => {
     return (
@@ -26,6 +27,8 @@ const Rotas = () => {
                 <Route exact path='/patients/manage' Component={privateRoute}>
                     <Route exact path='/patients/manage' Component={ManagePatientsScreen} />
                 </Route>
+                <Route exact path='/doctors' Component={DoctorsScreen} />
+
             </Routes>
         </BrowserRouter>
     )

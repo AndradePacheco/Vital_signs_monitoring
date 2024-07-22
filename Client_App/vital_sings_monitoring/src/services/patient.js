@@ -23,6 +23,9 @@ const PatientsService = {
     }),
     delete: (id) => API.delete(`/patient/${id}`, {
         headers: {'acess-token': localStorage.getItem('token')}       
+    }),
+    getVitals: (id) => API.get(`/patient/vitalsigns/${id}`, {
+        headers: {'acess-token': localStorage.getItem('token')}
     })
 }
 

@@ -104,3 +104,25 @@ caption{
 table, th, td {
     border: 1px solid black;
 }
+span.vitalButtons{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    position: relative;
+    margin-top: 5px;
+    left: 10%;
+
+}
+.vitalsButton{
+    border: none;
+    background: #333f70;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 6px 26px -7px rgba(0, 0, 0, 0.354);
+    transition: all .3s;
+}
+
+.vitalsButton:hover{
+    transform: scale(.95);
+    transition: all .3s;
+}

@@ -2,6 +2,7 @@ import '../../styles/patients.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PatientsService from '../../services/patient';
+import Patient from '../managePatients/patient';
 function Patients() {
     const [patients, setPatients] = useState([]);
 
@@ -66,27 +67,20 @@ function Patients() {
                         </thead>
                         <tbody>
                             {
-                                patients.map(patient => {
+                                patients.map((patient, pos) => {
                                     return (
                                         <tr key={patient._id}>
                                             <td className='tableName'>
-                                                <Link to={`/vitals/${patient._id}`}>{patient.name} &#128065;</Link>
+                                                [{pos + 1}] <Link to={`/vitals/${patient._id}`}>{patient.name} &#128065;</Link>
                                             </td>
-                                            <td>
-                                                63 <span className='patientsMeasure'>BPM</span>
-                                            </td>
-                                            <td>
-                                                99<span className='patientsMeasure'>%</span>
-                                            </td>
-                                            <td>
-                                                30<span className='patientsMeasure'>º</span>
-                                            </td>
+                                            <Patient key={patient._id} patientId={patient._id}/>
                                         </tr>
                                     )
                                 })
                             }
                         </tbody>
                     </table>
+                    <button type='button' className='patientsButton'><Link to={'/patients/manage'}>Gerir Pacientes</Link></button>
                 </div>
             </div>
         </>

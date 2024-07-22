@@ -5,7 +5,7 @@ import io from "../../..";
 
 export async function SetVitalSigns(req: Request, res: Response){
     const { id } = req.params;
-    const { heart_rate, temperature } = req.body;
+    const { heart_rate, temperature, oxygenation } = req.body;
 
     try {
         const patient = await Patient.findById(id);
@@ -23,8 +23,8 @@ export async function SetVitalSigns(req: Request, res: Response){
             },
             {new: true}
         );*/
-        //io.sockets.in(id).emit('dados', {'heart-rate': heart_rate, 'oxygenation': oxygenation, 'temperature': temperature});
-        console.log(heart_rate, temperature)
+        io.sockets.in(id).emit('dados', {'heart-rate': heart_rate, 'oxygenation': oxygenation, 'temperature': temperature, "id": id});
+        console.log(heart_rate, temperature, oxygenation)
         res.json({patient})
 
     } catch (error) {

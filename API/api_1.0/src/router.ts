@@ -14,6 +14,8 @@ import { SetVitalSigns } from "./app/useCases/patients/SetVitalSigns";
 import { GetVitalSigns } from "./app/useCases/patients/GetVitalSigns";
 import { DeletePatient } from "./app/useCases/patients/deletePatient";
 import { UpdatePatient } from "./app/useCases/patients/UpdatePatient";
+import { UpdateDoctor } from "./app/useCases/doctors/UpdateDoctor";
+import { DeleteDoctor } from "./app/useCases/doctors/DeleteDoctor";
 
 export const router = Router();
 //Login
@@ -41,10 +43,15 @@ router.put('/patient/vitalsigns/:id', SetVitalSigns)
 //Get Vital Signs
 router.get('/patient/vitalsigns/:id', loginAuthorization, GetVitalSigns)
 
+
+//Atualizar Doutor
+router.put('/doctor/:id', loginAuthorization, doctorAuthorization, UpdateDoctor);
 //Get Doctor
 router.get('/doctor/:id',loginAuthorization , GetDoctor);
 //Get Doctors
 router.get('/doctor',loginAuthorization , GetDoctors);
 //Register Doctor
 router.post('/doctor', RegisterDoctor);
+//Remover Doutor
+router.delete('/doctor/:id', loginAuthorization, doctorAuthorization, DeleteDoctor);
 
